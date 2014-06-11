@@ -9,11 +9,9 @@
 <title>Hong Liu's Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--main style-->
-<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-<!--google font style-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
-<!--font-family: 'Open Sans', sans-serif;-->
+<!--font-family: sans-serif;-->
 <!-- font css style-->
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <!--for slider style-->
@@ -27,7 +25,7 @@
 </head><body>
 <!--wrapper start-->
 <div class="wrapper" id="wrapper">
-  <header>
+  <header class="hidden-print">
     <!--banner start-->
     <div class="banner row" id="banner">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadd" style="height:100%">
@@ -74,7 +72,7 @@
   <!--about me start-->
   <section class="aboutme" id="aboutme">
     <div class="container">
-      <div class="heading">
+      <div class="heading hidden-print">
         <h2>About me</h2>
         <p>A small introduction about my self</p>
       </div>
@@ -84,14 +82,14 @@
           <h4 class="subHeading">Web Designer & Web Developer from Beijing</h4>
           <p>My experience creating Web App includes building and deploying scalable solutions on top of public and private cloud. I am an expert deploying web app on Amazon AWS EC2, Google App Engine, AppFog, Heroku, OpenShift, Ali-yun and Baidu-yun. I have consistently delivered projects on time and under budget, which has earned me the role of team lead on recent project. I believe my skills would be enough for creating superior web application.</p>
           <p>Influences by minimalist design, I organize my code by strip everything down to its essential function and achieve simplicity. Ideally, my code will reduced to a stage where no one can remove anything further to achieve the function.</p>
-          <a href="#" class="bntDownload"><i class="fa fa-file-pdf-o fa-2x"></i> Download Printable Resume</a> </div>
-        <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic"> <img src="http://i.imgur.com/3KCxrRa.jpg?1" alt="" class="img-circle topmar"> </div>
+          <a href="javascript:window.print();" class="bntDownload hidden-print"><i class="fa fa-file-pdf-o fa-2x"></i> &#160; Download Printable Resume</a> </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic"> <img src="http://i.imgur.com/3KCxrRa.jpg?1" alt="" class="img-circle topmar"> </div>
       </div>
     </div>
   </section>
   <!--about me end-->
   <!--technical start-->
-  <section class="technical" id="technical">
+  <section class="technical hidden-print" id="technical">
     <div class="container">
       <div class="heading">
         <h2>Technical Skills</h2>
@@ -241,7 +239,7 @@
   </section>
   <!--education end-->
   <!--protfolio start-->
-  <section class="protfolio" id="protfolio">
+  <section class="protfolio hidden-print" id="protfolio">
     <div class="container">
       <div class="heading">
         <h2>Portfolio</h2>
@@ -293,7 +291,7 @@
         <p>Please feel free if you would like to have a chat.</p>
       </div>
     </div>
-    <div class="row mapArea">
+    <div class="row mapArea hidden-print">
       <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=39.85783, 116.4427&amp;spn=0.01134,0.026157&amp;t=m&amp;z=16&amp;output=embed"></iframe>
     </div>
   </section>
@@ -309,7 +307,7 @@
       </div>
       <!--contact info end-->
       <!--contact form start-->
-      <div class="col-xs-12 col-sm-9 col-md-8 col-lg-8 conForm">
+      <div class="col-xs-12 col-sm-9 col-md-8 col-lg-8 conForm hidden-print">
         <h4>Shoot a message!</h4>
         <div id="message"></div>
         <form method="post" action="//forms.brace.io/hong.liu@live.cn" name="cform" id="cform">
@@ -325,7 +323,7 @@
   </section>
   <!--contact end-->
   <!--footer start-->
-  <section class="footer" id="footer">
+  <section class="footer hidden-print" id="footer">
     <div class="container">
       <ul>
         <li><a href="http://twitter.com/honglio"><i class="fa fa-twitter fa-2x"></i></a></li>
