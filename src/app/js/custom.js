@@ -50,6 +50,25 @@
     });
   });
 
+  // In mobile browser, navbar collapse when click on 'a'.
+  $('.navbar.navbar-inverse.navbar-static-top a').click(function() {
+    $('.navbar-collapse').addClass('hideClass');
+  });
+
+
+  $('.navbar.navbar-inverse.navbar-static-top a').click(function() {
+    $('.navbar-collapse').addClass('collapse');
+  });
+
+
+  $('.navbar.navbar-inverse.navbar-static-top a').click(function() {
+    $('.navbar-collapse').removeClass('in');
+  });
+
+  $('.navbar-toggle').click(function() {
+    $('.navbar-collapse').removeClass('hideClass');
+  });
+
   // Smoth page scroll
   $(function() {
     $('a[href*=#]:not([href=#])').click(function() {
