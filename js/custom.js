@@ -32,6 +32,24 @@
 
     });
 
+    //enabling stickUp on the '.navbar-wrapper' class
+    $(function() {
+        $('.navbar-wrapper').stickUp({
+            parts: {
+                0: 'banner',
+                1: 'aboutme',
+                2: 'technical',
+                3: 'exprience',
+                4: 'education',
+                5: 'protfolio',
+                6: 'contact'
+            },
+            itemClass: 'menuItem',
+            itemHover: 'active',
+            topMargin: 'auto'
+        });
+    });
+
     // Smoth page scroll
     $(function() {
         $('a[href*=#]:not([href=#])').click(function() {
