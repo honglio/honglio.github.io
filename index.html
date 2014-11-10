@@ -8,15 +8,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Hong Liu's Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!-- build:css(.) css/vendor.css -->
 <!--main style-->
 <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-<link rel="stylesheet" type="text/css" media="print" href="css/print.css">
 <!--font-family: sans-serif;-->
 <!-- font css style-->
 <link rel="stylesheet" href="css/font-awesome.min.css">
-<!--for slider style-->
-
+<!-- endbuild -->
+<!-- build:css(.tmp) css/main.css -->
+<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+<link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+<!-- endbuild -->
 <noscript>
 <link rel="stylesheet" type="text/css" href="css/fallback.css" />
 </noscript>
@@ -24,6 +28,9 @@
 			<link rel="stylesheet" type="text/css" href="css/fallback.css" />
 		<![endif]-->
 </head><body>
+<!--[if lt IE 9]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 <!--wrapper start-->
 <div class="wrapper" id="wrapper">
   <header class="hidden-print">
@@ -357,70 +364,61 @@
   <!--footer end-->
 </div>
 <!--wrapper end-->
+
+<!-- build:js(.) js/vendor.js -->
 <!--modernizr js-->
 <script type="text/javascript" src="js/modernizr.custom.26633.js"></script>
 <!--jquary min js-->
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery.gridrotator.js"></script>
-<!--for custom jquary-->
-<script src="js/custom.js"></script>
-<!--for placeholder jquary-->
-<script type="text/javascript" src="js/jquery.placeholder.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- endbuild -->
+
 <!--for menu jquary-->
-<script type="text/javascript" src="js/stickUp.js"></script>
+<script type="text/javascript" src="js/jquery.stickup.min.js"></script>
 <script type="text/javascript">
-jQuery(function($) {
-$(document).ready( function() {
+jQuery(function() {
   //enabling stickUp on the '.navbar-wrapper' class
-  $('.navbar-wrapper').stickUp({
-				parts: {
-				  0: 'banner',
-				  1: 'aboutme',
-				  2: 'technical',
-				  3: 'exprience',
-				  4: 'education',
-				  5: 'protfolio',
-				  6: 'contact'
-				},
-				itemClass: 'menuItem',
-				itemHover: 'active',
-				topMargin: 'auto'
-			  });
-});
-
-$( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
-  $( ".navbar-collapse" ).addClass( "hideClass" );
-});
-
-
-$( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
-  $( ".navbar-collapse" ).addClass( "collapse" );
-});
-
-
-$( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
-  $( ".navbar-collapse" ).removeClass( "in" );
-});
-
-$( ".navbar-toggle" ).click(function() {
-  $( ".navbar-collapse" ).removeClass( "hideClass" );
-});
-
-
+  $(function() {
+      $('.navbar-wrapper').stickUp({
+          parts: {
+              0: 'banner',
+              1: 'aboutme',
+              2: 'technical',
+              3: 'exprience',
+              4: 'education',
+              5: 'protfolio',
+              6: 'contact'
+          },
+          itemClass: 'menuItem',
+          itemHover: 'active',
+          topMargin: 'auto'
+      });
+  });
 });
 </script>
-<!--for portfoli filter jquary-->
-<script src="js/jquery.isotope.js" type="text/javascript"></script>
-<!--for portfoli lightbox -->
-<link type="text/css" rel="stylesheet" id="theme" href="css/jquery-ui-1.8.16.custom.css">
-<link type="text/css" rel="stylesheet" href="css/lightbox.min.css">
-<script type="text/javascript" src="js/jquery.ui.widget.min.js"></script>
-<script type="text/javascript" src="js/jquery.ui.rlightbox.js"></script>
+
+<!-- build:js({app,.tmp}) js/main.js -->
+<!--for custom jquary-->
+<script type="text/javascript" src="js/custom.js"></script>
+<!-- endbuild -->
+
+<!-- build:js(.) js/plugins.js -->
+<!--for resize debonce-->
+<script type="text/javascript" src="js/jquery.gridrotator.js"></script>
+<!--for placeholder jquary-->
+<script type="text/javascript" src="js/jquery.placeholder.js"></script>
 <!--for skill chat jquary-->
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/jquery.easypiechart.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="js/jquery.easypiechart.js"></script>
+<!--for portfoli filter jquary-->
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
 <!--contact form js-->
 <script type="text/javascript" src="js/jquery.contact.js"></script>
+<!--for portfoli lightbox -->
+<script type="text/javascript" src="js/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.rlightbox.js"></script>
+<link type="text/css" rel="stylesheet" id="theme" href="css/jquery-ui-1.8.16.custom.css">
+<link type="text/css" rel="stylesheet" href="css/lightbox.min.css">
+<!-- endbuild -->
 </body>
 </html>
