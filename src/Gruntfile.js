@@ -35,7 +35,7 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= config.app %>/scripts/{,*/}*.js'],
+        files: ['<%= config.app %>/js/{,*/}*.js'],
         tasks: ['jshint'],
         options: {
           livereload: true
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js']
       },
       styles: {
-        files: ['<%= config.app %>/styles/{,*/}*.css'],
+        files: ['<%= config.app %>/css/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
       },
       livereload: {
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= config.app %>/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
+          '.tmp/css/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ]
       }
@@ -120,6 +120,98 @@ module.exports = function (grunt) {
       },
       server: '.tmp'
     },
+    jsbeautifier: {
+        fix: {
+           src: [
+               '<%= config.app %>/js/**/*.js',
+               '!<%= config.app %>/js/vendor/*.js',
+               '<%= config.app %>/css/**/*.css',
+               '<%= config.app %>/*.html',
+               'test/spec/**/*.js',
+           ],
+           options: {
+               html: {
+                   braceStyle: 'collapse',
+                   indentChar: ' ',
+                   indentScripts: 'keep',
+                   indentSize: 2,
+                   maxPreserveNewlines: 10,
+                   preserveNewlines: true,
+                   unformatted: ['a', 'sub', 'sup', 'b', 'i', 'u'],
+                   wrapLineLength: 0
+               },
+               css: {
+                   indentChar: ' ',
+                   indentSize: 2
+               },
+               js: {
+                   braceStyle: 'collapse',
+                   breakChainedMethods: false,
+                   e4x: false,
+                   evalCode: false,
+                   indentChar: ' ',
+                   indentLevel: 0,
+                   indentSize: 2,
+                   indentWithTabs: false,
+                   jslintHappy: false,
+                   keepArrayIndentation: false,
+                   keepFunctionIndentation: false,
+                   maxPreserveNewlines: 10,
+                   preserveNewlines: true,
+                   spaceBeforeConditional: true,
+                   spaceInParen: false,
+                   unescapeStrings: false,
+                   wrapLineLength: 0
+               },
+               mode: 'VERIFY_AND_WRITE'
+           }
+       },
+       test: {
+           src: [
+               '<%= config.app %>/js/**/*.js',
+               '!<%= config.app %>/js/vendor/*.js',
+               '<%= config.app %>/css/**/*.css',
+               '<%= config.app %>/*.html',
+               'test/spec/**/*.js',
+           ],
+           options: {
+               html: {
+                   braceStyle: 'collapse',
+                   indentChar: ' ',
+                   indentScripts: 'keep',
+                   indentSize: 2,
+                   maxPreserveNewlines: 10,
+                   preserveNewlines: true,
+                   unformatted: ['a', 'sub', 'sup', 'b', 'i', 'u'],
+                   wrapLineLength: 0
+               },
+               css: {
+                   indentChar: ' ',
+                   indentSize: 2
+               },
+               js: {
+                   braceStyle: 'collapse',
+                   breakChainedMethods: false,
+                   e4x: false,
+                   evalCode: false,
+                   indentChar: ' ',
+                   indentLevel: 0,
+                   indentSize: 2,
+                   indentWithTabs: false,
+                   jslintHappy: false,
+                   keepArrayIndentation: false,
+                   keepFunctionIndentation: false,
+                   maxPreserveNewlines: 10,
+                   preserveNewlines: true,
+                   spaceBeforeConditional: true,
+                   spaceInParen: false,
+                   unescapeStrings: false,
+                   wrapLineLength: 0
+               },
+               mode: 'VERIFY_ONLY'
+           }
+       }
+    },
 
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
@@ -129,20 +221,10 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= config.app %>/scripts/{,*/}*.js',
-        '!<%= config.app %>/scripts/vendor/*',
+        '<%= config.app %>/js/{,*/}*.js',
+        '!<%= config.app %>/js/vendor/*.js',
         'test/spec/{,*/}*.js'
       ]
-    },
-
-    // Mocha testing framework configuration options
-    mocha: {
-      all: {
-        options: {
-          run: true,
-          urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
-        }
-      }
     },
 
     // Add vendor prefixed styles
@@ -153,31 +235,31 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/styles/',
+          cwd: '.tmp/css/',
           src: '{,*/}*.css',
-          dest: '.tmp/styles/'
+          dest: '.tmp/css/'
         }]
       }
     },
 
     // Automatically inject Bower components into the HTML file
-    wiredep: {
-      app: {
-        ignorePath: /^\/|\.\.\//,
-        src: ['<%= config.app %>/index.html'],
-        exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
-      }
-    },
+    // wiredep: {
+    //   app: {
+    //     ignorePath: /^\/|\.\.\//,
+    //     src: ['<%= config.app %>/index.html'],
+    //     exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
+    //   }
+    // },
 
     // Renames files for browser caching purposes
     rev: {
       dist: {
         files: {
           src: [
-            '<%= config.dist %>/scripts/{,*/}*.js',
-            '<%= config.dist %>/styles/{,*/}*.css',
+            '<%= config.dist %>/js/{,*/}*.js',
+            '<%= config.dist %>/css/{,*/}*.css',
             '<%= config.dist %>/images/{,*/}*.*',
-            '<%= config.dist %>/styles/fonts/{,*/}*.*',
+            '<%= config.dist %>/fonts/{,*/}*.*',
             '<%= config.dist %>/*.{ico,png}'
           ]
         }
@@ -210,28 +292,32 @@ module.exports = function (grunt) {
         assetsDirs: [
           '<%= config.dist %>',
           '<%= config.dist %>/images',
-          '<%= config.dist %>/styles'
+          '<%= config.dist %>/css'
         ]
       },
       html: ['<%= config.dist %>/{,*/}*.html'],
-      css: ['<%= config.dist %>/styles/{,*/}*.css']
+      css: ['<%= config.dist %>/css/{,*/}*.css']
     },
 
-     uncss: {
+    uncss: {
       dist: {
         options: {
           // Take our Autoprefixed stylesheet main.css &
           // any other stylesheet dependencies we have..
           stylesheets: [
-            '../.tmp/styles/main.css',
-            '../bower_components/bootstrap/dist/css/bootstrap.css'
+            // '../.tmp/css/main.css',
+            '../<%= config.app %>/css/bootstrap.css',
+            // '../<%= config.app %>/css/fallback.css',
+            '../<%= config.app %>/css/font-awesome.css',
+            // '../<%= config.app %>/css/print.css',
+            // '../<%= config.app %>/css/style.css'
           ],
           // Ignore css selectors for async content with complete selector or regexp
           // Only needed if using Bootstrap
-          ignore: [/dropdown-menu/,/\.collapsing/,/\.collapse/] 
+          ignore: [/dropdown-menu/,/\.collapsing/,/\.collapse/]
         },
         files: {
-          '.tmp/styles/main.css': ['<%= config.app %>/index.html']
+          '.tmp/css/vendor.css': ['<%= config.app %>/index.html']
         }
       }
     },
@@ -242,7 +328,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= config.app %>/images',
-          src: '{,*/}*.{gif,jpeg,jpg,png}',
+          src: '**/*.{gif,jpeg,jpg,png}',
           dest: '<%= config.dist %>/images'
         }]
       }
@@ -284,27 +370,56 @@ module.exports = function (grunt) {
     // By default, your `index.html`'s <!-- Usemin block --> will take care
     // of minification. These next options are pre-configured if you do not
     // wish to use the Usemin blocks.
-     cssmin: {
-       dist: {
-         files: {
-           '<%= config.dist %>/styles/main.css': [
-             '.tmp/styles/{,*/}*.css'
-           ]
-         }
-       }
-     },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= config.dist %>/scripts/scripts.js': [
-    //         '<%= config.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
+    cssmin: {
+      dist: {
+        files: {
+          '<%= config.dist %>/css/vendor.css': [
+            '.tmp/css/vendor.css'
+          ],
+          '<%= config.dist %>/css/main.css': [
+            '.tmp/css/style.css'
+          ],
+          '<%= config.dist %>/css/print.css': [
+            '.tmp/css/print.css'
+          ],
+          '<%= config.dist %>/css/fallback.css': [
+            '.tmp/css/fallback.css'
+          ],
+          '<%= config.dist %>/css/lightbox.css': [
+            '.tmp/css/jquery-ui-1.8.16.custom.css',
+            '.tmp/css/lightbox.min.css',
+          ]
+        }
+      }
+    },
+    uglify: {
+      dist: {
+        files: {
+          '<%= config.dist %>/js/vendor.js': [
+            '<%= config.app %>/js/vendor/modernizr.custom.26633.js',
+            '<%= config.app %>/js/vendor/jquery.min.js',
+            '<%= config.app %>/js/vendor/bootstrap.min.js'
+          ],
+          '<%= config.dist %>/js/plugins.js': [
+            '<%= config.app %>/js/vendor/jquery.gridrotator.js',
+            '<%= config.app %>/js/vendor/jquery.placeholder.js',
+            '<%= config.app %>/js/vendor/jquery.stickup.min.js',
+            '<%= config.app %>/js/vendor/jquery.easing.min.js',
+            '<%= config.app %>/js/vendor/jquery.easypiechart.js',
+            '<%= config.app %>/js/vendor/jquery.isotope.js',
+            '<%= config.app %>/js/vendor/jquery.contact.js',
+            '<%= config.app %>/js/vendor/jquery.ui.widget.min.js',
+            '<%= config.app %>/js/vendor/jquery.ui.rlightbox.js'
+          ],
+          '<%= config.dist %>/js/main.js': [
+            '<%= config.app %>/js/custom.js'
+          ]
+        }
+      }
+    },
+    concat: {
+      dist: {}
+    },
 
     // Copies remaining files to places other tasks can use
     copy: {
@@ -318,7 +433,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'fonts/{,*/}*.*'
           ]
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
@@ -334,8 +449,8 @@ module.exports = function (grunt) {
       styles: {
         expand: true,
         dot: true,
-        cwd: '<%= config.app %>/styles',
-        dest: '.tmp/styles/',
+        cwd: '<%= config.app %>/css',
+        dest: '.tmp/css/',
         src: '{,*/}*.css'
       }
     },
@@ -390,28 +505,33 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'connect:test',
-      'mocha'
+      'connect:test'
     ]);
   });
 
   grunt.registerTask('build', [
     'clean:dist',
-    'wiredep',
+    // 'wiredep',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
     'uncss',
     'cssmin',
-    //'concat',
-    //'uglify',
+    'concat',
+    'uglify',
+    'copy:styles',
     'copy:dist',
     'rev',
     'usemin',
     'htmlmin'
   ]);
 
+  grunt.registerTask('fix-lint', [
+    'jsbeautifier:fix'
+  ]);
+
   grunt.registerTask('default', [
+    'jsbeautifier:test',
     'newer:jshint',
     'test',
     'build'
