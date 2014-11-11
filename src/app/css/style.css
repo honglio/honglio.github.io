@@ -886,6 +886,7 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 }
 .topCon {
   padding-bottom: 0px !important;
+  padding-top: 140px !important;
 }
 .mapArea {
   background: url(../images/map-bro.png) repeat-x 0 0;

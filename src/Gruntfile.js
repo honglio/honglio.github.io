@@ -377,17 +377,15 @@ module.exports = function (grunt) {
             '.tmp/css/vendor.css'
           ],
           '<%= config.dist %>/css/main.css': [
-            '.tmp/css/style.css'
+            '.tmp/css/style.css',
+            '.tmp/css/jquery-ui-1.8.16.custom.css',
+            '.tmp/css/lightbox.min.css',
           ],
           '<%= config.dist %>/css/print.css': [
             '.tmp/css/print.css'
           ],
           '<%= config.dist %>/css/fallback.css': [
             '.tmp/css/fallback.css'
-          ],
-          '<%= config.dist %>/css/lightbox.css': [
-            '.tmp/css/jquery-ui-1.8.16.custom.css',
-            '.tmp/css/lightbox.min.css',
           ]
         }
       }
