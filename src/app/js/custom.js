@@ -37,11 +37,11 @@
     $('.navbar-wrapper').stickUp({
       parts: {
         0: 'banner',
-        1: 'aboutme',
-        2: 'technical',
-        3: 'exprience',
-        4: 'education',
-        5: 'protfolio',
+        1: 'protfolio',
+        2: 'aboutme',
+        3: 'education',
+        4: 'exprience',
+        5: 'technical',
         6: 'contact'
       },
       itemClass: 'menuItem',
