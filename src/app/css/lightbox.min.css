@@ -22,6 +22,7 @@
   margin: 0;
   padding: 0;
 }
+
 #ui-lightbox {
   font-size: 62.5%;
   padding: 0px;
@@ -32,20 +33,24 @@
   border: none;
   background: #181b22;
 }
+
 #ui-lightbox-content-container {
   position: relative;
 }
+
 #ui-lightbox-content {
   border: 0;
   position: relative;
   width: 20px;
   height: 20px;
 }
+
 #ui-lightbox-content>* {
   display: block;
   position: absolute;
   z-index: 100;
 }
+
 #ui-lightbox-arrow {
   cursor: pointer;
   display: block;
@@ -54,14 +59,17 @@
   margin-top: -8px;
   z-index: 101;
 }
+
 .ui-lightbox-arrow-next {
   border-right: 0;
   right: 0;
 }
+
 .ui-lightbox-arrow-prev {
   border-left: 0;
   left: 0;
 }
+
 #ui-lightbox-panorama-icon {
   cursor: pointer;
   height: 32px;
@@ -71,39 +79,47 @@
   top: 20px;
   z-index: 110;
 }
+
 .ui-lightbox-panorama-icon-expand {
   background: url(../images/zoom.png) top left no-repeat;
 }
+
 .ui-lightbox-panorama-icon-expand-hover {
   background: url(../images/zoom.png) top left no-repeat;
 }
+
 .ui-lightbox-panorama-icon-shrink {
   background: url(../images/zoom-hover.png) top right no-repeat;
 }
+
 .ui-lightbox-panorama-icon-shrink-hover {
   background: url(../images/zoom-hover.png) top right no-repeat;
 }
+
 .ui-lightbox-loader {
   background: url(loader.gif) center center no-repeat;
 }
+
 #ui-lightbox-bottombar {
   margin-top: 5px;
   /*height:40px;*/
-  
   position: relative;
   background: #181b22;
   border: none;
   padding: 10px 0px;
 }
+
 #ui-lightbox-bottombar>p {
   margin-right: 20px;
   height: 46px;
   line-height: 20px;
 }
+
 #ui-lightbox-bottombar-bottom {
   text-align: left;
   display: none;
 }
+
 #ui-lightbox-title-wrapper {
   font-size: 20px;
   height: 20px;
@@ -111,16 +127,19 @@
   text-align: left;
   padding: 10px 20px 0 30px;
 }
+
 #ui-lightbox-counter {
   font-size: 9px;
   line-height: 20px;
   vertical-align: middle;
 }
+
 #ui-lightbox-separator {
   line-height: 20px;
   padding: 0 2px;
   vertical-align: middle;
 }
+
 #ui-lightbox-button-prev,
 #ui-lightbox-button-next,
 #ui-lightbox-button-play {
@@ -128,19 +147,23 @@
   line-height: 20px;
   vertical-align: middle;
 }
+
 #ui-lightbox-button-close {
   line-height: 20px;
   position: absolute;
   top: 17px;
   right: 5px;
 }
+
 .ui-lightbox-button {
   cursor: pointer;
 }
+
 .ui-lightbox-button.ui-state-highlight {
   border-style: none;
   background: none;
 }
+
 #ui-lightbox-map {
   background-color: black;
   border: 1px solid white;
@@ -153,19 +176,23 @@
   width: 150px;
   z-index: 10000;
 }
+
 #ui-lightbox-map-viewport {
   border: 1px solid white;
   left: -1px;
   position: absolute;
   top: -1px;
 }
+
 #ui-lightbox-overlay {
   border: 0;
   position: fixed;
 }
+
 #ui-lightbox-error {
   background: url(error_bg.png) repeat left top;
 }
+
 #ui-lightbox-error-message {
   color: #fff;
   font-size: 14px;
@@ -174,12 +201,15 @@
   padding-top: 274px;
   text-align: center;
 }
+
 #ui-lightbox-error-footer {
   text-align: center;
 }
+
 #ui-lightbox-error-footer>button {
   margin-right: 15px;
 }
+
 .ui-lightbox-error-icon-sign {
   background: url(error_sign.png) no-repeat center 226px;
 }
