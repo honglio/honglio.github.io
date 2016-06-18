@@ -513,7 +513,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
-    // 'uncss',
+    'uncss',
     'cssmin',
     'concat',
     'uglify',
