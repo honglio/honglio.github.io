@@ -50,7 +50,7 @@ module.exports = function (grunt) {
       },
       styles: {
         files: ['<%= config.app %>/css/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+        tasks: ['copy:styles', 'autoprefixer']
       },
       livereload: {
         options: {
@@ -530,7 +530,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'jsbeautifier:test',
-    'newer:jshint',
+    'jshint',
     'test',
     'build'
   ]);

@@ -384,11 +384,11 @@ header {
   display: none;
 }
 
-.nav> li> a {
+.nav>li>a {
   display: inline-block;
 }
 
-.navbar-nav> li {
+.navbar-nav>li {
   float: none;
   display: inline;
 }
@@ -485,7 +485,7 @@ header {
   background-color: #0A64A4;
 }
 
-.carousel-inner> .item> img {
+.carousel-inner>.item>img {
   position: absolute;
   top: 0;
   left: 0;
