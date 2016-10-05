@@ -38,11 +38,10 @@
       parts: {
         0: 'banner',
         1: 'protfolio',
-        2: 'aboutme',
-        3: 'education',
-        4: 'exprience',
-        5: 'technical',
-        6: 'contact'
+        2: 'education',
+        3: 'exprience',
+        4: 'technical',
+        5: 'contact'
       },
       itemClass: 'menuItem',
       itemHover: 'active',
