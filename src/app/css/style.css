@@ -161,56 +161,12 @@ header {
   background: #CACACA;
 }
 
-.bannerText {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 35%;
-  text-align: center;
-  padding: 30px 0 30px;
-  max-width: 960px;
-  border: 1px solid #fff;
-  background: rgba(0, 0, 0, 0.2);
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#b2000000, endColorstr=#b2000000);
-  zoom: 1;
-}
-
-.bannerText h1 {
-  text-transform: uppercase;
-}
-
-.bannerText h2 {
-  font-size: 34px;
-  text-transform: none;
-}
-
-.bannerPart {
-  /*background:url(../images/1.jpg) no-repeat 0 0;*/
-  height: 100%;
-  overflow: hidden;
-}
-
 .bgwidth {
   width: 100%;
 }
 
 .bgheight {
   height: 100%;
-}
-
-
-/*------------------------------------
-	3.1 Slide show background control
---------------------------------------*/
-
-.bannerPart {
-  background: #1b1f2b;
-}
-
-.bannerPart img {
-  opacity: 0.2;
-  filter: alpha(opacity=20);
-  /* For IE8 and earlier */
 }
 
 
@@ -1233,20 +1189,6 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
     padding-left: 18px;
     padding-right: 18px;
   }
-  .bannerText {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-  .bannerText h1 {
-    font-size: 65px;
-    line-height: 71px;
-  }
-  .bannerText h2 {
-    font-size: 28px;
-  }
-  .proPic {
-    text-align: center;
-  }
 }
 
 @media screen and (max-width: 810px) {
@@ -1326,19 +1268,6 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
     -webkit-transform: translate(0px, -70px);
     /* Safari and Chrome */
   }
-  .bannerText {
-    top: 25%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  .bannerText h1 {
-    font-size: 42px;
-    line-height: 48px;
-  }
-  .bannerText h2 {
-    font-size: 18px;
-    line-height: 24px;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1346,6 +1275,9 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
     line-height: 17px;
     padding-top: 11px;
     padding-bottom: 11px;
+  }
+  .hidden-mobile {
+    display: none;
   }
 }
 
